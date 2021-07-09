@@ -65,7 +65,20 @@ int User::getUsersYears() {
 }
 
 bool User::isPartOfAddressExisting(string partAddress) {
-	bool isFound =  User::address.find(partAddress);
-	
-	return isFound;
+	if (INT_MAX <= User::address.find(partAddress))
+	{
+		return false;
+	} else {
+		return true;
+	}
+}
+
+void User::createUser(long long int &lastId) {
+	cin >> User::firstName;
+	cin >> User::lastName;
+	cin >> User::Username;
+	cin >> User::Password;
+	cin >> User::address;
+	cin >> User::studentName;
+	cin >> User::year_of_student;
 }

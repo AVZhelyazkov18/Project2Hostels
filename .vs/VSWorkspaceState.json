@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Applications",
+    "\\Applications\\Applications"
   ],
-  "SelectedNode": "\\.editorconfig",
+  "SelectedNode": "\\Applications\\Applications\\UserAdmin.cpp",
   "PreviewInSolutionExplorer": false
 }

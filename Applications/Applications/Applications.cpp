@@ -1,10 +1,11 @@
 #include <iostream>
+#include <string>
 #include "UserAdmin.h"
+#include <vector>
 using namespace std;
 
 int main()
 {
-	User user1;
-	user1.getUsersYears();
-	cout << (bool)9;
+	vector<User> users;
+	long long int lastuserId = 0;
 }

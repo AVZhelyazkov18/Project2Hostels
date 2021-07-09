@@ -26,6 +26,7 @@ class User {
 		void changePassword(std::string password);
 		int getUsersYears();
 		bool isPartOfAddressExisting(std::string partAddress);
+		void createUser(long long int &userIds);
 };
 
 class Admin : public User {
