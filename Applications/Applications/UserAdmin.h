@@ -12,6 +12,8 @@ class User {
 		std::string address;
 		std::string studentName;
 		int year_of_student = 0;
+
+		static long long int currentId;
 	protected:
 		long long int getId();
 		std::string getUsername();
@@ -22,11 +24,18 @@ class User {
 		std::string getStudentName();
 		int getYearOfStudent();
 	public:
+		void setId(long long int num);
 		void setUsername(std::string givenUsername);
 		void changePassword(std::string password);
 		int getUsersYears();
 		bool isPartOfAddressExisting(std::string partAddress);
-		void createUser(long long int &userIds);
+		void setUserInfo(long long int &userIds);
+		void setCurrentId(long long int &id);
+		void setFirstName(std::string name);
+		void setAddress(std::string address);
+		void setLastName(std::string lastName);
+		void setYear(int year);
+		void setStudentName(std::string name);
 		User(std::string userName, std::string passWord, std::string fName, std::string lName, std::string Address, std::string studentName, int studentYear) {
 			Username = userName;
 			Password = passWord;
@@ -35,8 +44,10 @@ class User {
 			this->address = Address;
 			this->studentName = studentName;
 			this->year_of_student = studentYear;
+			User::currentId++;
+			this->Id = User::currentId;
 		}
-		User() { Id = 1; year_of_student = 0; }
+		User() { User::currentId = 0; }
 };
 
 class Admin : public User {

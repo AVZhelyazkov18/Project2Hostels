@@ -54,6 +54,23 @@ void Admin::setAdminLevel(short int level) {
 	Admin::adminLevel = level;
 }
 
+void User::setFirstName(std::string name) {
+	User::firstName = name;
+}
+void User::setAddress(std::string address) {
+	User::address = address;
+}
+void User::setLastName(std::string lastName) {
+	User::lastName = lastName;
+}
+void User::setYear(int year) {
+	User::year_of_student = year;
+}
+void User::setStudentName(std::string name) {
+	User::studentName = name;
+}
+
+
 int User::getUsersYears() {
 	if (User::year_of_student == NULL) { cout << "Student has no years." << endl; }
 
@@ -73,7 +90,11 @@ bool User::isPartOfAddressExisting(string partAddress) {
 	}
 }
 
-void User::createUser(long long int &lastId) {
+void User::setId(long long int id) {
+	User::Id = id;
+}
+
+void User::setUserInfo(long long int &lastId) {
 	cin >> User::firstName;
 	cin >> User::lastName;
 	cin >> User::Username;
@@ -81,4 +102,8 @@ void User::createUser(long long int &lastId) {
 	cin >> User::address;
 	cin >> User::studentName;
 	cin >> User::year_of_student;
+}
+
+void User::setCurrentId(long long int &id) {
+	User::currentId = id;
 }
