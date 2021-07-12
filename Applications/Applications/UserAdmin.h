@@ -4,14 +4,14 @@
 
 class User {
 	private:
-		long long int Id;
+		long long int Id = 0;
 		std::string Username;
 		std::string Password;
 		std::string firstName;
 		std::string lastName;
 		std::string address;
 		std::string studentName;
-		int year_of_student;
+		int year_of_student = 0;
 	protected:
 		long long int getId();
 		std::string getUsername();
@@ -27,6 +27,16 @@ class User {
 		int getUsersYears();
 		bool isPartOfAddressExisting(std::string partAddress);
 		void createUser(long long int &userIds);
+		User(std::string userName, std::string passWord, std::string fName, std::string lName, std::string Address, std::string studentName, int studentYear) {
+			Username = userName;
+			Password = passWord;
+			this->firstName = fName;
+			this->lastName = lName;
+			this->address = Address;
+			this->studentName = studentName;
+			this->year_of_student = studentYear;
+		}
+		User() { Id = 1; year_of_student = 0; }
 };
 
 class Admin : public User {
@@ -35,4 +45,10 @@ class Admin : public User {
 	public: 
 		int getAdminLevel();
 		void setAdminLevel(short int level);
+
+		Admin(int level, std::string _username, std::string _password) {
+			this->adminLevel = level;
+			setUsername(_username);
+			changePassword(_password);
+		}
 };
