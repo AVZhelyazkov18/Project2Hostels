@@ -68,24 +68,31 @@ void adminMenu(vector<User> &users) {
 		{
 			cls();
 			while (true) {
+				cls();
 				cout << "1. Existing Users" << endl;
 				cout << "2. Disabled Users" << endl;
 				cout << "3. Back" << endl;
 				cin >> str;
 				if (str == "1") {
+					cout << endl << endl << "+-------------------+" << endl;
 					for (int i = 0; i < users.size(); i++)
 					{
 						if (not users.at(i)._isDisabled()) {
-							cout << i << ". " << users.at(i).getFirstName() << " " << users.at(i).getLastName() << " " << users.at(i).getAddress() << " " << users.at(i).getUsersYears() << endl;
+							cout << users.at(i).getUserId() << ". " << users.at(i).getFirstName() << " " << users.at(i).getLastName() << " " << users.at(i).getAddress() << " " << users.at(i).getUsersYears() << endl;
 						}
 					}
+					cout << endl << "+-------------------+" << endl;
+					system("pause");
 				} else if (str == "2") {
+					cout << endl << endl << "+-------------------+" << endl;
 					for (int i = 0; i < users.size(); i++)
 					{
 						if (users.at(i)._isDisabled()) {
-							cout << i << ". " << users.at(i).getFirstName() << " " << users.at(i).getLastName() << " " << users.at(i).getAddress() << " " << users.at(i).getUsersYears() << endl;
+							cout << users.at(i).getUserId() << ". " << users.at(i).getFirstName() << " " << users.at(i).getLastName() << " " << users.at(i).getAddress() << " " << users.at(i).getUsersYears() << endl;
 						}
 					}
+					cout << endl << "+-------------------+" << endl;
+					system("pause");
 				} else if (str == "3") {
 					break;
 				} else {
@@ -96,40 +103,44 @@ void adminMenu(vector<User> &users) {
 		} else if (str == "2") {
 			User user;
 			long long int size = (int64_t)users.size();
-			if (user.setUserInfo(size)) {
+			bool val = user.setUserInfo(size);
+			if(val) {
 				if (user.getUsersYears() >= 12 and user.getUsersYears() <= 16)
 				{
 					users.push_back(user);
 					cout << "User has been successfully added!" << endl;
+					system("pause");
 				} else {
 					cout << "User does not meet the age requirments. (12 - 16)" << endl;
+					system("pause");
 				}
 			}
 		} else if (str == "3") {
 			cls();
 			int userIndex = 0;
+			bool isCancelling = false;
 			while (true) {
-
 				while (true) {
 					cin >> str;
 					try {
-						if (stoi(str) <= users.size() and stoi(str) > 0) {
+						if (stoi(str) == 0) {
+							isCancelling = true;
+							break;
+						}
+						if (stoi(str) <= users.size() - 1 and stoi(str) > 0) {
 							userIndex = stoi(str);
 							break;
+						} else {
+							cls();
+							cout << "User doesn't exist with ID: " << str << ". Please enter a valid ID or 0 to Cancel." << endl;
 						}
 					} catch (...) {
 						cout << "Please enter a numerical ID." << endl;
 						continue;
 					}
 				}
-				User& user = users.at(0);
-				for (size_t i = 0; i < users.size(); i++)
-				{
-					if (users.at(i).getUserId() == userIndex)
-					{
-						user = users.at(i);
-						break;
-					}
+				if (isCancelling == true) {
+					break;
 				}
 				cout << "1. Edit Username" << endl;
 				cout << "2. Edit Password" << endl;
@@ -141,28 +152,28 @@ void adminMenu(vector<User> &users) {
 					cin >> str;
 					if (str != "")
 					{
-						user.setUsername(str);
+						users.at(userIndex).setUsername(str);
 						cout << "Successfully changed User's Username!" << endl;
 					}
 				} else if (str == "2") {
 					cin >> str;
 					if (str != "")
 					{
-						user.changePassword(str);
+						users.at(userIndex).changePassword(str);
 						cout << "Successfully changed User's Password!" << endl;
 					}
 				} else if (str == "3") {
 					cin >> str;
 					if (str != "")
 					{
-						user.setFirstName(str);
+						users.at(userIndex).setFirstName(str);
 						cout << "Successfully changed User's First Name!" << endl;
 					}
 				} else if (str == "4") {
 					cin >> str;
 					if (str != "")
 					{
-						user.setLastName(str);
+						users.at(userIndex).setLastName(str);
 						cout << "Successfully changed User's Last Name!" << endl;
 					}
 				} else if (str == "0") {
@@ -173,26 +184,34 @@ void adminMenu(vector<User> &users) {
 				}
 			}
 		} else if (str == "4") {
-			int userIndex;
+			int userIndex = 0;
+			bool isCancelling = false;
 			while (true) {
 				cin >> str;
 				try {
-					if (stoi(str) <= users.size() and stoi(str) > 0) {
-						userIndex = stoi(str);
+					if (stoi(str) == 0) {
+						isCancelling = true;
 						break;
 					}
-				}
-				catch (...) {
+					if (stoi(str) <= users.size() - 1 and stoi(str) > 0) {
+						userIndex = stoi(str);
+						break;
+					} else {
+						cls();
+						cout << "User doesn't exist with ID: " << str << ". Please enter a valid ID or 0 to Cancel." << endl;
+					}
+				} catch (...) {
 					cout << "Please enter a numerical ID." << endl;
 					continue;
 				}
 			}
-			User& user = users.at(userIndex);
-			user.deleteUser();
+			if (isCancelling == false) {
+				User& user = users.at(userIndex);
+				user.deleteUser();
+			}
 		} else if (str == "0") {
 			return;
-		}
-		else {
+		} else {
 			cout << "Please choose a valid option. (1/2/3/4/0)" << endl;
 		}
 	}
@@ -207,7 +226,7 @@ void Login(vector<User> &users, int loginIndex) {
 	User& user = users.at(loginIndex);
 
 	if (user._isAdmin() == true) {
-		userMenu(user);
+		adminMenu(users);
 	} else {
 		userMenu(user);
 	}

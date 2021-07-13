@@ -106,7 +106,15 @@ bool User::setUserInfo(long long int &lastId) {
 	cout << "Enter the Student's Name: ";
 	cin >> User::studentName;
 	cout << "Enter the Student's Year of birth: ";
-	cin >> User::year_of_student;
+	string year;
+	cin >> year;
+	try {
+		User::year_of_student = stoi(year);
+	} catch (...) {
+		cout << "Symbols need to be numerical." << endl;
+		system("pause");
+		return false;
+	}
 	if (User::firstName == "" or User::lastName == "" or User::address == "" or User::Password == "" or User::Username == "" or User::studentName == "")
 	{
 		User::firstName = "";
