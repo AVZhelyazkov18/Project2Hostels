@@ -26,7 +26,7 @@ getStudentName() - Returns student's name
 
 getAddress() - Returns student's address
 
-getYearOfStudent() - Returns the year of birth of the student
+getYearOfStudent() - Returns the current age of the student
 
 setAdmin() - 
 
