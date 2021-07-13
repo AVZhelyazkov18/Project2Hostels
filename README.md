@@ -1,10 +1,10 @@
 # Project2Hostels
 
-Goal of the project
+1. Goal of the project
 
+The goal of the project was to make a program that manages the applications of students for hostel. 
 
-
-Segments of the program and their functions
+2. Segments of the program and their functions
 
 Functions : 
 
@@ -45,3 +45,5 @@ User
 Admin
 
 Used technologies, development environments, development tools and their uses for the program.
+
+Our code was written fully on C++, we used Visual Studio as development environment, GitHub to upload our code, presentation and documentation, we communicated through Microsoft Teams, Microsoft Power Point for the presentation.
