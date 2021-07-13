@@ -31,7 +31,7 @@ class User {
 		int getUsersYears();
 		bool _isDisabled();
 		bool isPartOfAddressExisting(std::string partAddress);
-		void setUserInfo(long long int &userIds);
+		bool setUserInfo(long long int &userIds);
 		void setCurrentId(long long int &id);
 		void setFirstName(std::string name);
 		void setAddress(std::string address);
@@ -39,6 +39,7 @@ class User {
 		void setYear(int year);
 		void setStudentName(std::string name);
 		void setAdmin(bool isAdmin);
+		int getUserId();
 		User(std::string userName, std::string passWord, std::string fName, std::string lName, std::string Address, std::string studentName, int studentYear) {
 			Username = userName;
 			Password = passWord;

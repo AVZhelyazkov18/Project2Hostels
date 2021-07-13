@@ -91,14 +91,34 @@ void User::setId(long long int id) {
 	User::Id = id;
 }
 
-void User::setUserInfo(long long int &lastId) {
+bool User::setUserInfo(long long int &lastId) {
+	User::Id = lastId;
+	cout << "Enter the User's First Name: ";
 	cin >> User::firstName;
+	cout << "Enter the User's Last Name: ";
 	cin >> User::lastName;
+	cout << "Enter the User's Username: ";
 	cin >> User::Username;
+	cout << "Enter the User's Password: ";
 	cin >> User::Password;
+	cout << "Enter the User's Address: ";
 	cin >> User::address;
+	cout << "Enter the Student's Name: ";
 	cin >> User::studentName;
+	cout << "Enter the Student's Year of birth: ";
 	cin >> User::year_of_student;
+	if (User::firstName == "" or User::lastName == "" or User::address == "" or User::Password == "" or User::Username == "" or User::studentName == "")
+	{
+		User::firstName = "";
+		User::lastName = "";
+		User::address = "";
+		User::Username = "";
+		User::Password = "";
+		User::studentName = "";
+		cout << "User has not been created due to empty data." << endl;
+		return false;
+	}
+	return true;
 }
 
 void User::disableUser() {
@@ -112,10 +132,14 @@ bool User::_isDisabled() {
 void User::deleteUser() {
 	if (User::isDisabled == false) {
 		User::disableUser();
-		cout << "User has been deleted." << endl;
+		cout << "User has been deleted successfully." << endl;
 	}
 }
 
 bool User::_isAdmin() {
 	return User::isAdmin;
+}
+
+int User::getUserId() {
+	return User::Id;
 }
