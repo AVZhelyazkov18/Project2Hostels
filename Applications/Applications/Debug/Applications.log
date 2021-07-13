@@ -1,6 +1,2 @@
-﻿  Applications.cpp
-  UserAdmin.cpp
-  Generating Code...
-Applications.obj : error LNK2001: unresolved external symbol "private: static __int64 User::currentId" (?currentId@User@@0_JA)
-UserAdmin.obj : error LNK2001: unresolved external symbol "private: static __int64 User::currentId" (?currentId@User@@0_JA)
-C:\Users\azhel\Source\Repos\Project2Hostels\Applications\Debug\Applications.exe : fatal error LNK1120: 1 unresolved externals
+﻿  UserAdmin.cpp
+  Applications.vcxproj -> C:\Users\azhel\Source\Repos\Project2Hostels\Applications\Debug\Applications.exe

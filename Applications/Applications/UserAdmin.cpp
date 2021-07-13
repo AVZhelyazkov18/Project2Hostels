@@ -46,12 +46,8 @@ int User::getYearOfStudent() {
 	return User::year_of_student;
 }
 
-int Admin::getAdminLevel() {
-	return adminLevel;
-}
-
-void Admin::setAdminLevel(short int level) {
-	Admin::adminLevel = level;
+void User::setAdmin(bool isAdmin) {
+	User::isAdmin = isAdmin;
 }
 
 void User::setFirstName(std::string name) {
@@ -72,11 +68,12 @@ void User::setStudentName(std::string name) {
 
 
 int User::getUsersYears() {
-	if (User::year_of_student == NULL) { cout << "Student has no years." << endl; }
 
 	time_t now = time(0);
 
 	tm* ltm = localtime(&now);
+
+	if ((1900 + ltm->tm_year) - User::year_of_student < 1) { cout << "Student doesn't exist." << endl; }
 
 	return (1900 + ltm->tm_year) - User::year_of_student;
 }
@@ -104,6 +101,21 @@ void User::setUserInfo(long long int &lastId) {
 	cin >> User::year_of_student;
 }
 
-void User::setCurrentId(long long int &id) {
-	User::currentId = id;
+void User::disableUser() {
+	User::isDisabled = true;
+}
+
+bool User::_isDisabled() {
+	return User::isDisabled;
+}
+
+void User::deleteUser() {
+	if (User::isDisabled == false) {
+		User::disableUser();
+		cout << "User has been deleted." << endl;
+	}
+}
+
+bool User::_isAdmin() {
+	return User::isAdmin;
 }
