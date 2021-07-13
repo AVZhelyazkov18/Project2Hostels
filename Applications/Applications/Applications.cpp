@@ -232,15 +232,20 @@ void Login(vector<User> &users, int loginIndex) {
 	}
 }
 
-void showLogin(vector<User> &users) {
+bool showLogin(vector<User> &users) {
 	bool entered = false;
 	cout << "Hello! Please enter your Username and Password on one line with a space between them." << endl;
+	cout << "Or write Exit to exit the program." << endl;
 	cout << "Example: MyUsername MyPassword" << endl;
 	int loginedIndex;
 	string _user, _pass;
 	while (not entered)
 	{
 		cin >> _user;
+		if (_user == "Exit" or _user == "exit")
+		{
+			return false;
+		}
 		cin >> _pass;
 
 		for (size_t i = 0; i < users.size(); i++)
@@ -260,6 +265,7 @@ void showLogin(vector<User> &users) {
 		}
 	}
 	Login(users, loginedIndex);
+	return true;
 }
 
 void setAdmin(vector<User> &users) {
@@ -280,5 +286,9 @@ int main()
 {
 	vector<User> users;
 	setAdmin(users);
-	showLogin(users);
+	bool val = false;
+	do {
+		val = showLogin(users);
+	} while (val);
+	
 }
