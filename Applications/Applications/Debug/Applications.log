@@ -1,7 +1,11 @@
 ﻿  Applications.cpp
-C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(32,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(78,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(88,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(130,21): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(196,20): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(12,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(14,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(24,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(39,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(63,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(111,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(121,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(163,21): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\azhel\source\repos\Project2Hostels\Applications\Applications\Applications.cpp(230,20): warning C4018: '<=': signed/unsigned mismatch
   Applications.vcxproj -> C:\Users\azhel\Source\Repos\Project2Hostels\Applications\Debug\Applications.exe

@@ -8,12 +8,43 @@ using namespace std;
 
 void cls();
 
-bool isCharNumber(char a) {
-	if (a >= 48 and a < 57)
+void sortVector(vector<User> users) {
+	for (int i = 0; i < users.size(); i++)
 	{
-		return true;
+		for (int j = 0; j < users.size(); j++)
+		{
+			if (users.at(i).getUsersYears() < users.at(j).getUsersYears())
+			{
+				User clone = users.at(i);
+				users.at(i) = users.at(j);
+				users.at(j) = clone;
+			}
+		}
 	}
-	return false;
+	for (int i = 0; i < users.size(); i++)
+	{
+		cout << i << ". " << users.at(i).getFirstName() << " " << users.at(i).getLastName() << " " << users.at(i).getUsersYears() << endl;
+	}
+	system("pause");
+}
+
+void findUser(vector<User> users) {
+	string studentName, firstName;
+
+	cout << "Enter student's name: ";
+	cin >> studentName;
+	cout << "Enter first name: ";
+	cin >> firstName;
+
+	for (int i = 0; i < users.size(); i++)
+	{
+		if (users[i].getStudentName() == studentName and users[i].getFirstName() == firstName)
+		{
+			cout << users[i].getFirstName() << " " << users[i].getLastName() << " " << users[i].getUsersYears() << " " << users[i].getStudentName() << endl;
+			break;
+		}
+	}
+	system("pause");
 }
 
 void userMenu(User& user) {
@@ -62,6 +93,8 @@ void adminMenu(vector<User> &users) {
 		cout << "2. Create a user" << endl;
 		cout << "3. Edit user's info" << endl;
 		cout << "4. Disable a user's account." << endl;
+		cout << "5. Sort Users by age and print them out." << endl;
+		cout << "6. Find User By User's First Name and Student's Name" << endl;
 		cout << "0. Log out" << endl;
 		cin >> str;
 		if (str == "1")
@@ -183,7 +216,8 @@ void adminMenu(vector<User> &users) {
 					cout << "Please enter a valid option." << endl;
 				}
 			}
-		} else if (str == "4") {
+		}
+		else if (str == "4") {
 			int userIndex = 0;
 			bool isCancelling = false;
 			while (true) {
@@ -196,11 +230,13 @@ void adminMenu(vector<User> &users) {
 					if (stoi(str) <= users.size() - 1 and stoi(str) > 0) {
 						userIndex = stoi(str);
 						break;
-					} else {
+					}
+					else {
 						cls();
 						cout << "User doesn't exist with ID: " << str << ". Please enter a valid ID or 0 to Cancel." << endl;
 					}
-				} catch (...) {
+				}
+				catch (...) {
 					cout << "Please enter a numerical ID." << endl;
 					continue;
 				}
@@ -209,6 +245,10 @@ void adminMenu(vector<User> &users) {
 				User& user = users.at(userIndex);
 				user.deleteUser();
 			}
+		} else if (str == "5") {
+			sortVector(users);
+		} else if (str == "6") {
+			findUser(users);
 		} else if (str == "0") {
 			return;
 		} else {
