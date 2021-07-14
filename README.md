@@ -2,7 +2,7 @@
 
 1. Goal of the project
 
-The goal of the project was to make a program that manages the applications of students for hostel. 
+The goal of the project was to make a program that manages the applications of students in hostel. 
 
 2. Segments of the program and their functions
 
@@ -32,13 +32,13 @@ setAdmin() -
 
 setFirstName() - Sets first name for the student
 
-setAddress() - 
+setAddress() - Inputs student's address
 
-setLastName() - 
+setLastName() - Inputs student's last name
 
-setYear() - Sets year for the student
+setYear() - Inputs current age of the student
 
-setStudentName() -
+setStudentName() - Inputs student's name
 
 getUsersYears() - Returns student's years also checks if the student exists 
 
@@ -46,7 +46,7 @@ isPartOfAddressExisting() -
 
 createUser() - 
 
-setId() - 
+setId() - Inputs student's id
 
 setUserInfo() - Input data of the student
 
@@ -58,15 +58,15 @@ deleteUser - Removes user
 
 _isAdmin() - 
 
-cls() - 
+isCharNumber - 
 
-userMenu() - 
+userMenu() - Menu for the user where he/she can view their info or log out from the program
 
 adminMenu() - Menu for the admin where he/she can edit data
 
-Login() - 
+Login() - Checks whether the logged user is admin/user
 
-showLogin() - Authenticator for user/admin also checks if user logged in and prints a welcome message, and if no username/password was entered
+showLogin() - Authenticator for admin/user also checks if user logged in and prints a welcome message, and if no username/password was entered
 
 Classes : 
 
