@@ -2,7 +2,7 @@
 
 1. Goal of the project
 
-The goal of the project was to make a program that manages the applications of students for hostel. 
+The goal of the project was to make a program that manages the applications of students in hostel. 
 
 2. Segments of the program and their functions
 
@@ -12,8 +12,6 @@ getId() - Returns user Id
 
 getUsername() - Returns student's username
 
-setUsername() - Sets username for the student
-
 getPassword() - Returns student's password
 
 changePassword() - Changes student's password
@@ -22,55 +20,51 @@ getFirtsName() - Returns student's first name
 
 getLastName() - Returns student's last name
 
-getStudentName() - Returns student's name
+getStudentName() - Returns student's name (both names)
 
 getAddress() - Returns student's address
 
-getYearOfStudent() - Returns the year of birth of the student
-
-setAdmin() - 
-
-setFirstName() - Sets first name for the student
-
-setAddress() - 
-
-setLastName() - 
-
-setYear() - Sets year for the student
-
-setStudentName() -
+getYearOfStudent() - Returns the current age of the student
 
 getUsersYears() - Returns student's years also checks if the student exists 
 
-isPartOfAddressExisting() - 
+setAdmin() - Checks if the user is admin
 
-createUser() - 
+setUsername() - Sets username for the student
 
-setId() - 
+setFirstName() - Sets first name for the student
+
+setLastName() - Inputs student's last name
+
+setAddress() - Inputs student's address
+
+setYear() - Inputs current age of the student
+
+setStudentName() - Inputs student's name
+
+setId() - Inputs student's id
 
 setUserInfo() - Input data of the student
 
-disableUser() - 
+disableUser() - Checks if the user is deleted
 
-_ isDisabled() - 
+_ isDisabled() - Returns whether the user is deleted or not
 
 deleteUser - Removes user
 
-_isAdmin() - 
+_isAdmin() - Checks if the user is admin
 
-cls() - 
-
-userMenu() - 
+userMenu() - Menu for the user where he/she can view their info or log out from the program
 
 adminMenu() - Menu for the admin where he/she can edit data
 
-Login() - 
+Login() - Checks whether the logged user is admin/user
 
-showLogin() - Authenticator for user/admin also checks if user logged in and prints a welcome message, and if no username/password was entered
+showLogin() - Authenticator for admin/user also checks if user logged in and prints a welcome message, and if no username/password was entered
 
-Classes : 
+Class : 
 
-User - 
+User - Contains all variables and functions of the program
 
 3. Used technologies, development environments, development tools and their uses for the program.
 
