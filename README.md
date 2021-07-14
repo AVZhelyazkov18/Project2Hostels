@@ -12,8 +12,6 @@ getId() - Returns user Id
 
 getUsername() - Returns student's username
 
-setUsername() - Sets username for the student
-
 getPassword() - Returns student's password
 
 changePassword() - Changes student's password
@@ -22,43 +20,39 @@ getFirtsName() - Returns student's first name
 
 getLastName() - Returns student's last name
 
-getStudentName() - Returns student's name
+getStudentName() - Returns student's name (both names)
 
 getAddress() - Returns student's address
 
 getYearOfStudent() - Returns the current age of the student
 
-setAdmin() - 
+getUsersYears() - Returns student's years also checks if the student exists 
+
+setAdmin() - Checks if the user is admin
+
+setUsername() - Sets username for the student
 
 setFirstName() - Sets first name for the student
 
-setAddress() - Inputs student's address
-
 setLastName() - Inputs student's last name
+
+setAddress() - Inputs student's address
 
 setYear() - Inputs current age of the student
 
 setStudentName() - Inputs student's name
 
-getUsersYears() - Returns student's years also checks if the student exists 
-
-isPartOfAddressExisting() - 
-
-createUser() - 
-
 setId() - Inputs student's id
 
 setUserInfo() - Input data of the student
 
-disableUser() - 
+disableUser() - Checks if the user is deleted
 
-_ isDisabled() - 
+_ isDisabled() - Returns whether the user is deleted or not
 
 deleteUser - Removes user
 
-_isAdmin() - 
-
-isCharNumber - 
+_isAdmin() - Checks if the user is admin
 
 userMenu() - Menu for the user where he/she can view their info or log out from the program
 
@@ -68,9 +62,9 @@ Login() - Checks whether the logged user is admin/user
 
 showLogin() - Authenticator for admin/user also checks if user logged in and prints a welcome message, and if no username/password was entered
 
-Classes : 
+Class : 
 
-User - 
+User - Contains all variables and functions of the program
 
 3. Used technologies, development environments, development tools and their uses for the program.
 
